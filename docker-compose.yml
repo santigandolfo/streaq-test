@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    command: uv run uvicorn web:app --host 0.0.0.0 --port 8000
+  worker:
+    build:
+      context: .
+    ports:
+      - "8001:8000"
+    depends_on:
+      - redis
+    command: uv run streaq worker.worker --web
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
