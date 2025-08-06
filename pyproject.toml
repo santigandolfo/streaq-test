@@ -6,5 +6,5 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[all]>=0.116.1",
-    "streaq[web]>=4.1.1",
+    "streaq[web]>=5.1.0",
 ]
