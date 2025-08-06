@@ -16,14 +16,14 @@ async def get_worker() -> AsyncGenerator[Worker]:
 
 @worker.task()
 async def task_low():
-    await asyncio.sleep(5)
+    await asyncio.sleep(1)
 
 
 @worker.task()
 async def task_mid():
-    await asyncio.sleep(5)
+    await asyncio.sleep(1)
 
 
 @worker.task()
 async def task_high():
-    await asyncio.sleep(5)
+    await asyncio.sleep(1)
